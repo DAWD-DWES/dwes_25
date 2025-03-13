@@ -55,6 +55,7 @@ if (isset($_SESSION['usuario'])) {
         echo $blade->run("formlogin");
     } elseif (isset($_SESSION['partida'])) {
         header("Location:juego.php");
+        die;
     } else {
         // Redirijo al cliente al script de gestión del juego
         header("Location:juego.php?botonnuevapartida");
@@ -79,12 +80,10 @@ if (isset($_SESSION['usuario'])) {
         else {
             // Invoco la vista del formulario de login con el flag de error activado
             echo $blade->run("formlogin", ['error' => true]);
-            die;
         }
         // En cualquier otro caso
     } else {
         // Invoco la vista del formulario de login
         echo $blade->run("formlogin");
-        die;
     }
 }

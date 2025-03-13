@@ -45,7 +45,6 @@ try {
     $bd = BD::getConexion();
 } catch (Exception $error) {
     echo $blade->run("cnxbderror", compact('error'));
-    die;
 }
 
 $partidaDAO = new PartidaDAO($bd);
